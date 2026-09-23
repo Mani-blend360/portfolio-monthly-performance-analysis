@@ -1,0 +1,31 @@
+{
+  "id": "positive-full-pack",
+  "polarity": "positive",
+  "category": "end_to_end",
+  "prompt": "Use $portfolio-monthly-performance-analysis to analyze August 2026 from assets/synthetic_monthly_data.csv and produce the complete monthly pack.",
+  "fixtures": [
+    "assets/synthetic_monthly_data.csv",
+    "assets/synthetic_company_profile.md"
+  ],
+  "expected": [
+    "Clearly labels the company and results as synthetic",
+    "Contains all eight required output sections",
+    "Reports revenue at USD 57.0m, USD 3.0m or 5.0% below budget, and USD 5.0m or 9.6% above prior year",
+    "Reports EBITDA margin at 14.2%, 120 bps below budget",
+    "Reports reconciliation as PASS only when figures match deterministic results",
+    "Carries the production-unit warning into the output"
+  ],
+  "prohibited": [
+    "Investment recommendation",
+    "Claim that the data is real",
+    "Unsupported causal explanation"
+  ],
+  "grading": {
+    "mode": "reviewer",
+    "critical": [
+      "numerical_reconciliation",
+      "synthetic_label",
+      "required_sections"
+    ]
+  }
+}

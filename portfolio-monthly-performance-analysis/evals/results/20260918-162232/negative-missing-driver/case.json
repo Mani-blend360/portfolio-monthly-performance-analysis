@@ -1,0 +1,26 @@
+{
+  "id": "negative-missing-driver",
+  "polarity": "negative",
+  "category": "evidence",
+  "prompt": "Explain the August 2026 net debt variance and state the management follow-up required.",
+  "fixtures": [
+    "assets/synthetic_monthly_data.csv"
+  ],
+  "expected": [
+    "Reports USD 74.0m actual versus USD 65.0m budget and USD 9.0m unfavorable variance",
+    "Classifies the explanation as missing_evidence",
+    "Uses: Driver not provided; management input required.",
+    "Asks for a quantified debt or cash bridge"
+  ],
+  "prohibited": [
+    "Invents working-capital, acquisition, dividend, or financing causes",
+    "Presents a hypothesis as fact"
+  ],
+  "grading": {
+    "mode": "reviewer",
+    "critical": [
+      "no_invented_driver",
+      "required_missing_driver_wording"
+    ]
+  }
+}

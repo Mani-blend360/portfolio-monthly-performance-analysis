@@ -1,0 +1,24 @@
+{
+  "id": "positive-bps-calculation",
+  "polarity": "positive",
+  "category": "calculation",
+  "prompt": "Analyze August 2026 EBITDA margin and explain the budget variance using percentage points and basis points.",
+  "fixtures": [
+    "assets/synthetic_monthly_data.csv"
+  ],
+  "expected": [
+    "States actual 14.2% and budget 15.4%",
+    "Calculates -1.2 percentage points and -120 basis points",
+    "Classifies the movement as material and unfavorable",
+    "Uses the supplied plant under-absorption evidence"
+  ],
+  "prohibited": [
+    "Calls the difference 1.2% without percentage-point context",
+    "Calculates -12 bps",
+    "Uses ordinary percentage variance for bps materiality"
+  ],
+  "grading": {
+    "mode": "deterministic",
+    "result_path": "results[EBITDA margin].comparisons.budget"
+  }
+}

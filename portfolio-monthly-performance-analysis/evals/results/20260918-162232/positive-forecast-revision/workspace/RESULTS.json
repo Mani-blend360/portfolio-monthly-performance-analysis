@@ -1,0 +1,917 @@
+{
+  "synthetic": true,
+  "company": "Northstar Components",
+  "period": "2026-08",
+  "validation_warnings": [
+    "row 77: management driver direction conflicts with actual versus budget",
+    "KPI 'Production volume' has inconsistent units: count, units"
+  ],
+  "results": [
+    {
+      "kpi": "Revenue",
+      "kpi_type": "financial",
+      "actual": 57.0,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 60.0,
+          "absolute_variance": -3.0,
+          "percentage_variance": -5.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 58.0,
+          "absolute_variance": -1.0,
+          "percentage_variance": -1.7241379310344827,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 52.0,
+          "absolute_variance": 5.0,
+          "percentage_variance": 9.615384615384615,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 59.0,
+          "absolute_variance": -2.0,
+          "percentage_variance": -3.389830508474576,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 61.0,
+          "absolute_variance": -4.0,
+          "percentage_variance": -6.557377049180328,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 720.0,
+        "absolute_variance": -30.0,
+        "percentage_variance": -4.166666666666667
+      },
+      "evidence_class": "contradictory_evidence",
+      "management_driver": "Price increases lifted revenue above budget",
+      "evidence_source": "Management monthly commentary",
+      "management_action": "Recover delayed shipments",
+      "action_owner": "COO",
+      "expected_completion_date": "2026-09-30"
+    },
+    {
+      "kpi": "Gross profit",
+      "kpi_type": "financial",
+      "actual": 22.8,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 24.0,
+          "absolute_variance": -1.2,
+          "percentage_variance": -5.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 23.5,
+          "absolute_variance": -0.7,
+          "percentage_variance": -2.978723404255319,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 20.8,
+          "absolute_variance": 2.0,
+          "percentage_variance": 9.615384615384615,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 23.6,
+          "absolute_variance": -0.8,
+          "percentage_variance": -3.389830508474576,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 24.4,
+          "absolute_variance": -1.6,
+          "percentage_variance": -6.557377049180328,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 288.0,
+        "absolute_variance": -10.0,
+        "percentage_variance": -3.4722222222222223
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Mix and lower plant utilization reduced gross profit",
+      "evidence_source": "Plant utilization report",
+      "management_action": "Improve line scheduling",
+      "action_owner": "Operations VP",
+      "expected_completion_date": "2026-10-15"
+    },
+    {
+      "kpi": "Gross margin",
+      "kpi_type": "financial",
+      "actual": 40.0,
+      "currency": "USD",
+      "unit": "%",
+      "direction": "higher_is_favorable",
+      "materiality_type": "bps",
+      "materiality_threshold": 100.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 40.0,
+          "absolute_variance": 0.0,
+          "percentage_variance": 0.0,
+          "percentage_point_difference": 0.0,
+          "basis_point_difference": 0.0,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        },
+        "prior_month": {
+          "comparison": 40.5,
+          "absolute_variance": -0.5,
+          "percentage_variance": -1.2345679012345678,
+          "percentage_point_difference": -0.5,
+          "basis_point_difference": -50.0,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 40.0,
+          "absolute_variance": 0.0,
+          "percentage_variance": 0.0,
+          "percentage_point_difference": 0.0,
+          "basis_point_difference": 0.0,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        },
+        "current_forecast": {
+          "comparison": 40.0,
+          "absolute_variance": 0.0,
+          "percentage_variance": 0.0,
+          "percentage_point_difference": 0.0,
+          "basis_point_difference": 0.0,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        },
+        "original_investment_case": {
+          "comparison": 40.0,
+          "absolute_variance": 0.0,
+          "percentage_variance": 0.0,
+          "percentage_point_difference": 0.0,
+          "basis_point_difference": 0.0,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 40.0,
+        "absolute_variance": 0.3,
+        "percentage_variance": 0.75,
+        "percentage_point_difference": 0.3,
+        "basis_point_difference": 30.0
+      },
+      "evidence_class": "calculated_fact",
+      "management_driver": "",
+      "evidence_source": "",
+      "management_action": "",
+      "action_owner": "",
+      "expected_completion_date": ""
+    },
+    {
+      "kpi": "EBITDA",
+      "kpi_type": "financial",
+      "actual": 8.1,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 9.24,
+          "absolute_variance": -1.14,
+          "percentage_variance": -12.337662337662337,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 9.0,
+          "absolute_variance": -0.9,
+          "percentage_variance": -10.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 7.8,
+          "absolute_variance": 0.3,
+          "percentage_variance": 3.8461538461538463,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 8.8,
+          "absolute_variance": -0.7,
+          "percentage_variance": -7.954545454545454,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 9.5,
+          "absolute_variance": -1.4,
+          "percentage_variance": -14.736842105263158,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 115.0,
+        "absolute_variance": -13.0,
+        "percentage_variance": -11.304347826086957
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Lower revenue and plant under-absorption reduced EBITDA",
+      "evidence_source": "August management accounts",
+      "management_action": "Improve line scheduling",
+      "action_owner": "Operations VP",
+      "expected_completion_date": "2026-10-15"
+    },
+    {
+      "kpi": "EBITDA margin",
+      "kpi_type": "financial",
+      "actual": 14.2,
+      "currency": "USD",
+      "unit": "%",
+      "direction": "higher_is_favorable",
+      "materiality_type": "bps",
+      "materiality_threshold": 100.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 15.4,
+          "absolute_variance": -1.2,
+          "percentage_variance": -7.792207792207792,
+          "percentage_point_difference": -1.2,
+          "basis_point_difference": -120.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 15.5,
+          "absolute_variance": -1.3,
+          "percentage_variance": -8.387096774193548,
+          "percentage_point_difference": -1.3,
+          "basis_point_difference": -130.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 15.0,
+          "absolute_variance": -0.8,
+          "percentage_variance": -5.333333333333333,
+          "percentage_point_difference": -0.8,
+          "basis_point_difference": -80.0,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "current_forecast": {
+          "comparison": 14.9,
+          "absolute_variance": -0.7,
+          "percentage_variance": -4.697986577181208,
+          "percentage_point_difference": -0.7,
+          "basis_point_difference": -70.0,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 15.6,
+          "absolute_variance": -1.4,
+          "percentage_variance": -8.974358974358974,
+          "percentage_point_difference": -1.4,
+          "basis_point_difference": -140.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 16.0,
+        "absolute_variance": -1.2,
+        "percentage_variance": -7.5,
+        "percentage_point_difference": -1.2,
+        "basis_point_difference": -120.0
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Plant under-absorption compressed margin",
+      "evidence_source": "August management accounts",
+      "management_action": "Improve line scheduling",
+      "action_owner": "Operations VP",
+      "expected_completion_date": "2026-10-15"
+    },
+    {
+      "kpi": "Operating expenses",
+      "kpi_type": "financial",
+      "actual": 14.7,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "lower_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 15.0,
+          "absolute_variance": -0.3,
+          "percentage_variance": -2.0,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "prior_month": {
+          "comparison": 14.5,
+          "absolute_variance": 0.2,
+          "percentage_variance": 1.3793103448275863,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 13.0,
+          "absolute_variance": 1.7,
+          "percentage_variance": 13.076923076923077,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "current_forecast": {
+          "comparison": 14.8,
+          "absolute_variance": -0.1,
+          "percentage_variance": -0.6756756756756757,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "original_investment_case": {
+          "comparison": 14.9,
+          "absolute_variance": -0.2,
+          "percentage_variance": -1.342281879194631,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 173.0,
+        "absolute_variance": 3.0,
+        "percentage_variance": 1.7341040462427746
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Vacancy timing kept operating expenses below budget",
+      "evidence_source": "HR vacancy report",
+      "management_action": "Complete priority hiring",
+      "action_owner": "HR Director",
+      "expected_completion_date": "2026-10-31"
+    },
+    {
+      "kpi": "Capital expenditure",
+      "kpi_type": "financial",
+      "actual": 5.5,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "lower_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 10.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 5.0,
+          "absolute_variance": 0.5,
+          "percentage_variance": 10.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 5.0,
+          "absolute_variance": 0.5,
+          "percentage_variance": 10.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 4.6,
+          "absolute_variance": 0.9,
+          "percentage_variance": 19.565217391304348,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "current_forecast": {
+          "comparison": 5.2,
+          "absolute_variance": 0.3,
+          "percentage_variance": 5.769230769230769,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 5.1,
+          "absolute_variance": 0.4,
+          "percentage_variance": 7.8431372549019605,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 55.0,
+        "absolute_variance": 2.0,
+        "percentage_variance": 3.6363636363636362
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Accelerated safety-equipment installation",
+      "evidence_source": "Approved capex tracker",
+      "management_action": "Complete installation",
+      "action_owner": "Plant Director",
+      "expected_completion_date": "2026-09-20"
+    },
+    {
+      "kpi": "Operating cash flow",
+      "kpi_type": "financial",
+      "actual": 5.6,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 10.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 6.5,
+          "absolute_variance": -0.9,
+          "percentage_variance": -13.846153846153847,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 6.2,
+          "absolute_variance": -0.6,
+          "percentage_variance": -9.67741935483871,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 5.5,
+          "absolute_variance": 0.1,
+          "percentage_variance": 1.8181818181818181,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 6.1,
+          "absolute_variance": -0.5,
+          "percentage_variance": -8.19672131147541,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 6.8,
+          "absolute_variance": -1.2,
+          "percentage_variance": -17.647058823529413,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 78.0,
+        "absolute_variance": -8.0,
+        "percentage_variance": -10.256410256410257
+      },
+      "evidence_class": "missing_evidence",
+      "management_driver": "",
+      "evidence_source": "",
+      "management_action": "",
+      "action_owner": "",
+      "expected_completion_date": ""
+    },
+    {
+      "kpi": "Net debt",
+      "kpi_type": "financial",
+      "actual": 74.0,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "lower_is_favorable",
+      "materiality_type": "absolute",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 65.0,
+          "absolute_variance": 9.0,
+          "percentage_variance": 13.846153846153847,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 72.0,
+          "absolute_variance": 2.0,
+          "percentage_variance": 2.7777777777777777,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 67.0,
+          "absolute_variance": 7.0,
+          "percentage_variance": 10.447761194029852,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "current_forecast": {
+          "comparison": 70.0,
+          "absolute_variance": 4.0,
+          "percentage_variance": 5.714285714285714,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 61.0,
+          "absolute_variance": 13.0,
+          "percentage_variance": 21.311475409836067,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 60.0,
+        "absolute_variance": 6.0,
+        "percentage_variance": 10.0
+      },
+      "evidence_class": "missing_evidence",
+      "management_driver": "",
+      "evidence_source": "",
+      "management_action": "",
+      "action_owner": "",
+      "expected_completion_date": ""
+    },
+    {
+      "kpi": "Order intake",
+      "kpi_type": "operational",
+      "actual": 70.0,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 62.0,
+          "absolute_variance": 8.0,
+          "percentage_variance": 12.903225806451612,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "prior_month": {
+          "comparison": 64.0,
+          "absolute_variance": 6.0,
+          "percentage_variance": 9.375,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "prior_year": {
+          "comparison": 57.0,
+          "absolute_variance": 13.0,
+          "percentage_variance": 22.80701754385965,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 65.0,
+          "absolute_variance": 5.0,
+          "percentage_variance": 7.6923076923076925,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "original_investment_case": {
+          "comparison": 64.0,
+          "absolute_variance": 6.0,
+          "percentage_variance": 9.375,
+          "materiality": "material",
+          "favorability": "favorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 700.0,
+        "absolute_variance": 20.0,
+        "percentage_variance": 2.857142857142857
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Two large customer awards increased order intake",
+      "evidence_source": "CRM order report",
+      "management_action": "Confirm production slots",
+      "action_owner": "Commercial Director",
+      "expected_completion_date": "2026-09-15"
+    },
+    {
+      "kpi": "Backlog",
+      "kpi_type": "operational",
+      "actual": 168.0,
+      "currency": "USD",
+      "unit": "USDm",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 148.0,
+          "absolute_variance": 20.0,
+          "percentage_variance": 13.513513513513514,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "prior_month": {
+          "comparison": 155.0,
+          "absolute_variance": 13.0,
+          "percentage_variance": 8.387096774193548,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "prior_year": {
+          "comparison": 138.0,
+          "absolute_variance": 30.0,
+          "percentage_variance": 21.73913043478261,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 160.0,
+          "absolute_variance": 8.0,
+          "percentage_variance": 5.0,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "original_investment_case": {
+          "comparison": 153.0,
+          "absolute_variance": 15.0,
+          "percentage_variance": 9.803921568627452,
+          "materiality": "material",
+          "favorability": "favorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 145.0,
+        "absolute_variance": 10.0,
+        "percentage_variance": 6.896551724137931
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Strong awards expanded backlog",
+      "evidence_source": "CRM order report",
+      "management_action": "Confirm production slots",
+      "action_owner": "Commercial Director",
+      "expected_completion_date": "2026-09-15"
+    },
+    {
+      "kpi": "Production volume",
+      "kpi_type": "operational",
+      "actual": 1080.0,
+      "currency": "",
+      "unit": "count",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 5.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 1160.0,
+          "absolute_variance": -80.0,
+          "percentage_variance": -6.896551724137931,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 1120.0,
+          "absolute_variance": -40.0,
+          "percentage_variance": -3.5714285714285716,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 1040.0,
+          "absolute_variance": 40.0,
+          "percentage_variance": 3.8461538461538463,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 1120.0,
+          "absolute_variance": -40.0,
+          "percentage_variance": -3.5714285714285716,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 1170.0,
+          "absolute_variance": -90.0,
+          "percentage_variance": -7.6923076923076925,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 12800.0,
+        "absolute_variance": -300.0,
+        "percentage_variance": -2.34375
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Unplanned downtime reduced output",
+      "evidence_source": "Maintenance log",
+      "management_action": "Complete reliability work",
+      "action_owner": "Plant Director",
+      "expected_completion_date": "2026-09-30"
+    },
+    {
+      "kpi": "Average selling price",
+      "kpi_type": "operational",
+      "actual": 52.8,
+      "currency": "USD",
+      "unit": "USD",
+      "direction": "higher_is_favorable",
+      "materiality_type": "percent",
+      "materiality_threshold": 3.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 52.5,
+          "absolute_variance": 0.3,
+          "percentage_variance": 0.5714285714285714,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "prior_month": {
+          "comparison": 52.0,
+          "absolute_variance": 0.8,
+          "percentage_variance": 1.5384615384615385,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "prior_year": {
+          "comparison": 51.0,
+          "absolute_variance": 1.8,
+          "percentage_variance": 3.5294117647058822,
+          "materiality": "material",
+          "favorability": "favorable"
+        },
+        "current_forecast": {
+          "comparison": 52.5,
+          "absolute_variance": 0.3,
+          "percentage_variance": 0.5714285714285714,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        },
+        "original_investment_case": {
+          "comparison": 52.0,
+          "absolute_variance": 0.8,
+          "percentage_variance": 1.5384615384615385,
+          "materiality": "non_material",
+          "favorability": "favorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 52.0,
+        "absolute_variance": 0.0,
+        "percentage_variance": 0.0
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Implemented contracted price increases",
+      "evidence_source": "Pricing realization report",
+      "management_action": "Monitor realization",
+      "action_owner": "Commercial Director",
+      "expected_completion_date": "2026-09-30"
+    },
+    {
+      "kpi": "Customer churn",
+      "kpi_type": "operational",
+      "actual": 1.2,
+      "currency": "",
+      "unit": "%",
+      "direction": "lower_is_favorable",
+      "materiality_type": "bps",
+      "materiality_threshold": 50.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 0.0,
+          "absolute_variance": 1.2,
+          "percentage_variance": "not_meaningful",
+          "percentage_point_difference": 1.2,
+          "basis_point_difference": 120.0,
+          "materiality": "material",
+          "favorability": "unfavorable"
+        },
+        "prior_month": {
+          "comparison": 1.1,
+          "absolute_variance": 0.1,
+          "percentage_variance": 9.090909090909092,
+          "percentage_point_difference": 0.1,
+          "basis_point_difference": 10.0,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "prior_year": {
+          "comparison": 1.0,
+          "absolute_variance": 0.2,
+          "percentage_variance": 20.0,
+          "percentage_point_difference": 0.2,
+          "basis_point_difference": 20.0,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "current_forecast": {
+          "comparison": 1.0,
+          "absolute_variance": 0.2,
+          "percentage_variance": 20.0,
+          "percentage_point_difference": 0.2,
+          "basis_point_difference": 20.0,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        },
+        "original_investment_case": {
+          "comparison": 0.9,
+          "absolute_variance": 0.3,
+          "percentage_variance": 33.333333333333336,
+          "percentage_point_difference": 0.3,
+          "basis_point_difference": 30.0,
+          "materiality": "non_material",
+          "favorability": "unfavorable"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 0.9,
+        "absolute_variance": 0.1,
+        "percentage_variance": 11.11111111111111,
+        "percentage_point_difference": 0.1,
+        "basis_point_difference": 10.0
+      },
+      "evidence_class": "missing_evidence",
+      "management_driver": "",
+      "evidence_source": "",
+      "management_action": "",
+      "action_owner": "",
+      "expected_completion_date": ""
+    },
+    {
+      "kpi": "Headcount",
+      "kpi_type": "operational",
+      "actual": 501.0,
+      "currency": "",
+      "unit": "count",
+      "direction": "neutral",
+      "materiality_type": "percent",
+      "materiality_threshold": 2.0,
+      "comparisons": {
+        "budget": {
+          "comparison": 500.0,
+          "absolute_variance": 1.0,
+          "percentage_variance": 0.2,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        },
+        "prior_month": {
+          "comparison": 498.0,
+          "absolute_variance": 3.0,
+          "percentage_variance": 0.6024096385542169,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        },
+        "prior_year": {
+          "comparison": 485.0,
+          "absolute_variance": 16.0,
+          "percentage_variance": 3.2989690721649483,
+          "materiality": "material",
+          "favorability": "neutral"
+        },
+        "current_forecast": {
+          "comparison": 500.0,
+          "absolute_variance": 1.0,
+          "percentage_variance": 0.2,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        },
+        "original_investment_case": {
+          "comparison": 500.0,
+          "absolute_variance": 1.0,
+          "percentage_variance": 0.2,
+          "materiality": "non_material",
+          "favorability": "neutral"
+        }
+      },
+      "full_year_forecast_revision": {
+        "comparison": 495.0,
+        "absolute_variance": 5.0,
+        "percentage_variance": 1.0101010101010102
+      },
+      "evidence_class": "source_supported",
+      "management_driver": "Headcount remained broadly stable",
+      "evidence_source": "HR roster",
+      "management_action": "",
+      "action_owner": "",
+      "expected_completion_date": ""
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-09-18T11:03:10.639370+00:00",
+  "counts": {
+    "total": 10,
+    "completed": 10,
+    "failed": 0,
+    "timed_out": 0
+  },
+  "cases": [
+    {
+      "id": "positive-full-pack",
+      "polarity": "positive",
+      "grading_mode": "reviewer",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 147.776,
+      "case_directory": "positive-full-pack"
+    },
+    {
+      "id": "positive-bps-calculation",
+      "polarity": "positive",
+      "grading_mode": "deterministic",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 58.568,
+      "case_directory": "positive-bps-calculation"
+    },
+    {
+      "id": "positive-zero-budget",
+      "polarity": "positive",
+      "grading_mode": "deterministic",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 60.542,
+      "case_directory": "positive-zero-budget"
+    },
+    {
+      "id": "positive-direction-and-materiality",
+      "polarity": "positive",
+      "grading_mode": "deterministic",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 85.94,
+      "case_directory": "positive-direction-and-materiality"
+    },
+    {
+      "id": "positive-forecast-revision",
+      "polarity": "positive",
+      "grading_mode": "deterministic",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 59.254,
+      "case_directory": "positive-forecast-revision"
+    },
+    {
+      "id": "negative-invalid-numeric",
+      "polarity": "negative",
+      "grading_mode": "deterministic",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 22.614,
+      "case_directory": "negative-invalid-numeric"
+    },
+    {
+      "id": "negative-duplicate-row",
+      "polarity": "negative",
+      "grading_mode": "deterministic",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 18.08,
+      "case_directory": "negative-duplicate-row"
+    },
+    {
+      "id": "negative-missing-driver",
+      "polarity": "negative",
+      "grading_mode": "reviewer",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 34.354,
+      "case_directory": "negative-missing-driver"
+    },
+    {
+      "id": "negative-contradictory-driver",
+      "polarity": "negative",
+      "grading_mode": "reviewer",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 80.511,
+      "case_directory": "negative-contradictory-driver"
+    },
+    {
+      "id": "negative-investment-advice",
+      "polarity": "negative",
+      "grading_mode": "reviewer",
+      "execution_status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 70.489,
+      "case_directory": "negative-investment-advice"
+    }
+  ],
+  "grading_status": "pending_review"
+}

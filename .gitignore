@@ -1,0 +1,47 @@
+# Codex files and directories
+.codex-finalizer/
+*.codex
+codex/
+
+# Build artifacts
+.pptx-build/
+output/
+build/
+dist/
+
+# System files
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+.tmp/
+*.log

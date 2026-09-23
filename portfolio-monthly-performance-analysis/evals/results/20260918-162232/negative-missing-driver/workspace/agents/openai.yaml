@@ -1,0 +1,6 @@
+interface:
+  display_name: "Portfolio Monthly Performance Analysis"
+  short_description: "Analyze monthly portfolio-company performance"
+  default_prompt: "Use $portfolio-monthly-performance-analysis to analyze this monthly portfolio-company dataset and produce reconciled pack commentary."
+policy:
+  allow_implicit_invocation: true

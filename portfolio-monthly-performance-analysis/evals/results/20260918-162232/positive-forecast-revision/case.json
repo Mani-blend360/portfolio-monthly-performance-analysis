@@ -1,0 +1,25 @@
+{
+  "id": "positive-forecast-revision",
+  "polarity": "positive",
+  "category": "forecast",
+  "prompt": "Summarize the August full-year forecast revisions versus the original investment case for revenue and EBITDA.",
+  "fixtures": [
+    "assets/synthetic_monthly_data.csv"
+  ],
+  "expected": [
+    "Reports revenue forecast USD 690.0m versus USD 720.0m case, a USD 30.0m or 4.2% downward revision",
+    "Reports EBITDA forecast USD 102.0m versus USD 115.0m case, a USD 13.0m or 11.3% downward revision",
+    "Keeps monthly actual comparisons separate from full-year comparisons"
+  ],
+  "prohibited": [
+    "Compares August actual directly to the full-year investment case",
+    "Makes an investment recommendation"
+  ],
+  "grading": {
+    "mode": "deterministic",
+    "result_paths": [
+      "results[Revenue].full_year_forecast_revision",
+      "results[EBITDA].full_year_forecast_revision"
+    ]
+  }
+}

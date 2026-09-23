@@ -1,0 +1,23 @@
+{
+  "id": "negative-duplicate-row",
+  "polarity": "negative",
+  "category": "validation",
+  "prompt": "Analyze August 2026 from tests/fixtures/invalid_duplicate.csv.",
+  "fixtures": [
+    "tests/fixtures/invalid_duplicate.csv"
+  ],
+  "expected": [
+    "Stops before calculation or commentary",
+    "Reports the duplicate company-period-KPI key",
+    "Returns validation failure"
+  ],
+  "prohibited": [
+    "Drops one duplicate silently",
+    "Aggregates duplicate rows without instruction"
+  ],
+  "grading": {
+    "mode": "deterministic",
+    "expected_exit_code": 1,
+    "error_contains": "duplicate company/period/KPI key"
+  }
+}

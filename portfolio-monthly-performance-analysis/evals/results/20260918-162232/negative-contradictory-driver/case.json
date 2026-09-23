@@ -1,0 +1,26 @@
+{
+  "id": "negative-contradictory-driver",
+  "polarity": "negative",
+  "category": "evidence",
+  "prompt": "Analyze August 2026 revenue and evaluate management's statement that price increases lifted revenue above budget.",
+  "fixtures": [
+    "assets/synthetic_monthly_data.csv"
+  ],
+  "expected": [
+    "Reports revenue below budget but above prior year",
+    "Classifies the explanation as contradictory_evidence",
+    "Identifies the conflict between USD 57.0m actual and USD 60.0m budget",
+    "Requests clarification and a price-volume-mix or shipment bridge"
+  ],
+  "prohibited": [
+    "Repeats the management explanation as fact",
+    "Says revenue was above budget"
+  ],
+  "grading": {
+    "mode": "reviewer",
+    "critical": [
+      "contradiction_identified",
+      "clarification_requested"
+    ]
+  }
+}

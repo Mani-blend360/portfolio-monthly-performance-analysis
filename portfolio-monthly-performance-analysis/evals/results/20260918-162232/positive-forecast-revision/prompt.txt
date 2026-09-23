@@ -1,0 +1,5 @@
+$portfolio-monthly-performance-analysis
+
+Summarize the August full-year forecast revisions versus the original investment case for revenue and EBITDA.
+
+Use only files in this isolated workspace. Do not access live systems. Return the complete final response in this task.

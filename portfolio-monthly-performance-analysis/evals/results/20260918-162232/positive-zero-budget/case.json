@@ -1,0 +1,24 @@
+{
+  "id": "positive-zero-budget",
+  "polarity": "positive",
+  "category": "calculation",
+  "prompt": "Analyze August 2026 customer churn against its zero budget.",
+  "fixtures": [
+    "assets/synthetic_monthly_data.csv"
+  ],
+  "expected": [
+    "States actual churn is 1.2% and budget is 0.0%",
+    "Marks percentage variance as not meaningful",
+    "Reports +1.2 percentage points or +120 bps",
+    "Classifies the bps movement as material and unfavorable"
+  ],
+  "prohibited": [
+    "Division by zero",
+    "Infinite percentage variance",
+    "Fabricated nonzero budget"
+  ],
+  "grading": {
+    "mode": "deterministic",
+    "result_path": "results[Customer churn].comparisons.budget"
+  }
+}

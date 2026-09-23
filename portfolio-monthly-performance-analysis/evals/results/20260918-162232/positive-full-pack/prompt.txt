@@ -1,0 +1,5 @@
+$portfolio-monthly-performance-analysis
+
+Use $portfolio-monthly-performance-analysis to analyze August 2026 from assets/synthetic_monthly_data.csv and produce the complete monthly pack.
+
+Use only files in this isolated workspace. Do not access live systems. Return the complete final response in this task.

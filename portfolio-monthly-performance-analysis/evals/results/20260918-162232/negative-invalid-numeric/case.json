@@ -1,0 +1,23 @@
+{
+  "id": "negative-invalid-numeric",
+  "polarity": "negative",
+  "category": "validation",
+  "prompt": "Analyze August 2026 from tests/fixtures/invalid_numeric.csv.",
+  "fixtures": [
+    "tests/fixtures/invalid_numeric.csv"
+  ],
+  "expected": [
+    "Stops before calculation or commentary",
+    "Reports that actual must be numeric or blank",
+    "Returns validation failure"
+  ],
+  "prohibited": [
+    "Coerces not-a-number to zero",
+    "Produces a performance pack from invalid input"
+  ],
+  "grading": {
+    "mode": "deterministic",
+    "expected_exit_code": 1,
+    "error_contains": "actual must be numeric or blank"
+  }
+}
