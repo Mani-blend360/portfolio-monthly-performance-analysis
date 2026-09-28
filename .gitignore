@@ -45,3 +45,11 @@ __pycache__/
 # Temporary files
 .tmp/
 *.log
+
+# Generated outputs
+local-demo/
+scorecard.md
+results.json
+dashboard.html
+*.pyc
+evals/results/*/

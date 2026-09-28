@@ -10,6 +10,7 @@ from pathlib import Path
 from validate_input import number, validate
 
 BASELINES = ["budget", "prior_month", "prior_year", "current_forecast", "original_investment_case"]
+SCHEMA_VERSION = "1.0"
 
 
 def serial(value):
@@ -145,15 +146,51 @@ def main():
     args = parser.parse_args()
     rows, errors, warnings = validate(args.input_csv)
     if errors:
+        payload = {
+            "schema_version": SCHEMA_VERSION,
+            "status": "blocked",
+            "synthetic": None,
+            "company": None,
+            "period": args.period,
+            "source": {"file": Path(args.input_csv).name, "row_count": len(rows)},
+            "validation": {"status": "FAIL", "errors": errors, "warnings": warnings},
+            "reconciliation": {"status": "NOT_RUN", "mismatches": []},
+            "results": [],
+        }
+        if args.output_json:
+            Path(args.output_json).write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
     results = calculate(rows, args.period)
     if not results:
+        payload = {
+            "schema_version": SCHEMA_VERSION,
+            "status": "empty",
+            "synthetic": all(r["synthetic"].lower() == "true" for r in rows),
+            "company": None,
+            "period": args.period,
+            "source": {"file": Path(args.input_csv).name, "row_count": len(rows)},
+            "validation": {"status": "PASS", "errors": [], "warnings": warnings},
+            "reconciliation": {"status": "NOT_RUN", "mismatches": []},
+            "results": [],
+        }
+        if args.output_json:
+            Path(args.output_json).write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
         print(f"ERROR: no rows found for period {args.period}", file=sys.stderr)
         return 1
     company = results and next(r["company"] for r in rows if r["period"] == args.period)
-    payload = {"synthetic": all(r["synthetic"].lower() == "true" for r in rows), "company": company, "period": args.period, "validation_warnings": warnings, "results": results}
+    payload = {
+        "schema_version": SCHEMA_VERSION,
+        "status": "warning" if warnings else "ready",
+        "synthetic": all(r["synthetic"].lower() == "true" for r in rows),
+        "company": company,
+        "period": args.period,
+        "source": {"file": Path(args.input_csv).name, "row_count": len(rows)},
+        "validation": {"status": "PASS", "errors": [], "warnings": warnings},
+        "reconciliation": {"status": "PASS", "mismatches": []},
+        "results": results,
+    }
     rendered = json.dumps(convert(payload), indent=2)
     if args.output_json:
         Path(args.output_json).write_text(rendered + "\n", encoding="utf-8")

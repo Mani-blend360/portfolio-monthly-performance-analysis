@@ -64,6 +64,41 @@ class PerformanceAnalysisTests(unittest.TestCase):
             _, errors, _ = validate(ROOT / "tests" / "fixtures" / name)
             self.assertTrue(errors, name)
 
+    def test_non_finite_number_is_invalid(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "nan.csv"
+            with (ASSETS / "synthetic_monthly_data.csv").open(newline="") as source:
+                rows = list(csv.DictReader(source))
+            rows[0]["actual"] = "NaN"
+            with target.open("w", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
+                writer.writeheader()
+                writer.writerows(rows)
+            _, errors, _ = validate(target)
+            self.assertTrue(any("actual must be numeric" in error for error in errors))
+
+    def test_multiple_companies_are_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "companies.csv"
+            with (ASSETS / "synthetic_monthly_data.csv").open(newline="") as source:
+                rows = list(csv.DictReader(source))
+            rows[0]["company"] = "Another Company"
+            with target.open("w", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
+                writer.writeheader()
+                writer.writerows(rows)
+            _, errors, _ = validate(target)
+            self.assertTrue(any("multiple companies" in error for error in errors))
+
+    def test_header_only_csv_is_invalid(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "empty.csv"
+            with target.open("w", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=PerformanceAnalysisTests.rows[0].keys())
+                writer.writeheader()
+            _, errors, _ = validate(target)
+            self.assertIn("CSV contains headers but no data rows", errors)
+
     def test_cli_output_completeness(self):
         with tempfile.TemporaryDirectory() as tmp:
             output_json = Path(tmp) / "results.json"
@@ -75,10 +110,45 @@ class PerformanceAnalysisTests(unittest.TestCase):
             )
             self.assertEqual(0, completed.returncode, completed.stderr)
             payload = json.loads(output_json.read_text())
+            self.assertEqual("1.0", payload["schema_version"])
+            self.assertEqual("warning", payload["status"])
+            self.assertEqual("PASS", payload["validation"]["status"])
+            self.assertEqual("PASS", payload["reconciliation"]["status"])
             self.assertEqual(15, len(payload["results"]))
             scorecard = output_md.read_text()
             self.assertIn("Revenue", scorecard)
             self.assertIn("Data-quality warnings", scorecard)
+
+    def test_cli_writes_blocked_payload_for_invalid_input(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output_json = Path(tmp) / "blocked.json"
+            completed = subprocess.run(
+                [sys.executable, str(SCRIPTS / "calculate_variances.py"),
+                 str(ROOT / "tests" / "fixtures" / "invalid_numeric.csv"),
+                 "--period", "2026-08", "--output-json", str(output_json)],
+                text=True, capture_output=True, check=False,
+            )
+            self.assertNotEqual(0, completed.returncode)
+            payload = json.loads(output_json.read_text())
+            self.assertEqual("blocked", payload["status"])
+            self.assertEqual("FAIL", payload["validation"]["status"])
+            self.assertEqual("NOT_RUN", payload["reconciliation"]["status"])
+            self.assertEqual([], payload["results"])
+
+    def test_cli_writes_empty_payload_for_missing_period(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output_json = Path(tmp) / "empty.json"
+            completed = subprocess.run(
+                [sys.executable, str(SCRIPTS / "calculate_variances.py"),
+                 str(ASSETS / "synthetic_monthly_data.csv"),
+                 "--period", "2099-01", "--output-json", str(output_json)],
+                text=True, capture_output=True, check=False,
+            )
+            self.assertNotEqual(0, completed.returncode)
+            payload = json.loads(output_json.read_text())
+            self.assertEqual("empty", payload["status"])
+            self.assertEqual("PASS", payload["validation"]["status"])
+            self.assertEqual("NOT_RUN", payload["reconciliation"]["status"])
 
     def test_sample_analysis_is_complete_and_reconciled(self):
         sample = (ASSETS / "expected_analysis.md").read_text()

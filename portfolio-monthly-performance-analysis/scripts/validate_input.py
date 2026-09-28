@@ -33,9 +33,12 @@ DOWN_WORDS = re.compile(r"\b(decrease[ds]?|fell|lower|below|decline[ds]?)\b", re
 
 
 def number(value):
-    if value == "":
+    if value is None or value.strip() == "":
         return None
-    return Decimal(value)
+    parsed = Decimal(value.strip())
+    if not parsed.is_finite():
+        raise InvalidOperation
+    return parsed
 
 
 def validate(path):
@@ -43,17 +46,32 @@ def validate(path):
     try:
         with Path(path).open(newline="", encoding="utf-8-sig") as handle:
             reader = csv.DictReader(handle)
-            missing = [c for c in REQUIRED if c not in (reader.fieldnames or [])]
+            fieldnames = reader.fieldnames or []
+            duplicates = sorted({name for name in fieldnames if fieldnames.count(name) > 1})
+            if duplicates:
+                return [], [f"duplicate columns: {', '.join(duplicates)}"], []
+            missing = [c for c in REQUIRED if c not in fieldnames]
             if missing:
                 return [], [f"missing required columns: {', '.join(missing)}"], []
             rows = list(reader)
-    except (OSError, csv.Error) as exc:
+    except (OSError, UnicodeError, csv.Error) as exc:
         return [], [f"cannot read CSV: {exc}"], []
+
+    if not rows:
+        return [], ["CSV contains headers but no data rows"], []
 
     seen = set()
     by_kpi = defaultdict(list)
     for line, row in enumerate(rows, 2):
         label = f"row {line}"
+        if None in row:
+            errors.append(f"{label}: contains more values than header columns")
+            row.pop(None, None)
+        for field in REQUIRED:
+            if row.get(field) is None:
+                row[field] = ""
+            else:
+                row[field] = row[field].strip()
         key = (row["company"], row["period"], row["kpi"])
         if key in seen:
             errors.append(f"{label}: duplicate company/period/KPI key {key}")
@@ -90,6 +108,10 @@ def validate(path):
                 errors.append(f"{label}: expected_completion_date must use YYYY-MM-DD")
         if row["management_driver"] and not row["evidence_source"]:
             warnings.append(f"{label}: management driver has no evidence source")
+        if row["management_action"] and not row["action_owner"]:
+            warnings.append(f"{label}: management action has no owner")
+        if row["management_action"] and not row["expected_completion_date"]:
+            warnings.append(f"{label}: management action has no expected completion date")
         try:
             actual, budget = number(row["actual"]), number(row["budget"])
             driver = row["management_driver"]
@@ -102,6 +124,10 @@ def validate(path):
         except InvalidOperation:
             pass
         by_kpi[row["kpi"]].append((line, row))
+
+    companies = {row["company"] for row in rows if row["company"]}
+    if len(companies) > 1:
+        errors.append(f"input contains multiple companies: {', '.join(sorted(companies))}")
 
     for kpi, items in by_kpi.items():
         currencies = {r["currency"] for _, r in items if r["currency"]}
