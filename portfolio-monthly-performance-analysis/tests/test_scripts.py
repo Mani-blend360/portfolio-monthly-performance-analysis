@@ -150,6 +150,34 @@ class PerformanceAnalysisTests(unittest.TestCase):
             self.assertEqual("PASS", payload["validation"]["status"])
             self.assertEqual("NOT_RUN", payload["reconciliation"]["status"])
 
+    def test_generated_results_are_accepted_by_dashboard_skill(self):
+        dashboard_root = ROOT.parent / "portfolio-performance-dashboard"
+        dashboard_validator = dashboard_root / "scripts" / "validate_dashboard_input.py"
+        self.assertTrue(dashboard_validator.is_file(), "companion dashboard skill is missing")
+        with tempfile.TemporaryDirectory() as tmp:
+            output_json = Path(tmp) / "RESULTS.json"
+            calculated = subprocess.run(
+                [sys.executable, str(SCRIPTS / "calculate_variances.py"),
+                 str(ASSETS / "synthetic_monthly_data.csv"), "--period", "2026-08",
+                 "--output-json", str(output_json)],
+                text=True, capture_output=True, check=False,
+            )
+            self.assertEqual(0, calculated.returncode, calculated.stderr)
+            validated = subprocess.run(
+                [sys.executable, str(dashboard_validator), str(output_json), "--json"],
+                text=True, capture_output=True, check=False,
+            )
+            self.assertEqual(0, validated.returncode, validated.stderr)
+            handoff = json.loads(validated.stdout)
+            self.assertTrue(handoff["valid"])
+            self.assertEqual("warning", handoff["presentation_state"])
+            self.assertEqual(15, handoff["kpi_count"])
+
+    def test_skill_contract_requires_dashboard_handoff(self):
+        instructions = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("immediately invoke `$portfolio-performance-dashboard`", instructions)
+        self.assertIn("Complete the dashboard workflow before giving the user the final response", instructions)
+
     def test_sample_analysis_is_complete_and_reconciled(self):
         sample = (ASSETS / "expected_analysis.md").read_text()
         for heading in (

@@ -14,9 +14,9 @@ Produce concise, management-ready analysis from supplied local data. Clearly lab
 3. Read [references/evidence-rules.md](references/evidence-rules.md). Link a driver only when supported and tag assertions with the defined evidence class.
 4. Read [references/commentary-guidelines.md](references/commentary-guidelines.md), interpret material results in business context, and draft the required sections.
 5. Reconcile every displayed number to RESULTS.json. Report `PASS` only when figures match and every material assertion is classified; otherwise report `FAIL` and mismatches.
-6. After writing `RESULTS.json`, continue with `$portfolio-performance-dashboard` using that exact file. This dashboard handoff is part of the normal workflow and does not require a second user request.
+6. After writing `RESULTS.json`, immediately invoke `$portfolio-performance-dashboard` with the exact absolute path to that file. Load and follow the dashboard skill's own `SKILL.md`; do not imitate or duplicate its presentation workflow inside this skill. Complete the dashboard workflow before giving the user the final response. This handoff is mandatory for every analysis outcome and does not require a second user request.
 
-When validation fails or the requested period has no rows, preserve the generated blocked or empty `RESULTS.json`; do not attempt commentary. Still continue with `$portfolio-performance-dashboard` so it renders the corresponding validation or empty state instead of a normal dashboard. When reconciliation fails, hand off the failed result so the dashboard shows its blocking mismatch state without unverified KPI cards.
+When validation fails or the requested period has no rows, preserve the generated blocked or empty `RESULTS.json`; do not attempt commentary. Still invoke `$portfolio-performance-dashboard` with that file so it renders the corresponding validation or empty state instead of a normal dashboard. When reconciliation fails, hand off the failed result so the dashboard shows its blocking mismatch state without unverified KPI cards.
 
 If the companion dashboard skill is unavailable, complete the analysis, report the results state, and say that interactive presentation could not be loaded. Do not recreate dashboard calculations or silently omit the handoff.
 
